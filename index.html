@@ -37,7 +37,7 @@
 <dialog class="room" id="room"><div class="room-inner"><button class="room-close" id="closeRoom" aria-label="Close">×</button><h2>Play a friend</h2><p id="roomText">Create a private game link, then send it to your friend.</p><button class="primary" id="createRoom">Create game link</button><div id="shareArea" class="hidden"><p>Room <span class="room-code" id="roomCode"></span></p><div class="room-actions"><input id="shareLink" readonly aria-label="Game invite link"><button class="primary" id="copyLink">Copy</button></div><p id="onlineStatus">Waiting for your friend to join…</p></div></div></dialog>
 <script>
 // Replace this URL with the address printed after deploying the Worker.
-const API_URL = 'https://YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev/api/games';
+const API_URL = 'https://backgammon-online.karan-motamed.workers.dev/api/games';
 const start=()=>{const p=Array.from({length:24},()=>({you:0,bot:0}));p[23].you=2;p[12].you=5;p[7].you=3;p[5].you=5;p[0].bot=2;p[11].bot=5;p[16].bot=3;p[18].bot=5;return p};
 let state={p:start(),bar:{you:0,bot:0},off:{you:0,bot:0},turn:'you',dice:[],used:[],selected:null,level:'good',history:[],busy:false,started:false};
 let online=null,pollTimer=null,syncQueue=Promise.resolve();
